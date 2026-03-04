@@ -14,7 +14,7 @@
        - max-height: calc(100dvh - …) → cap sur petits écrans
     */
     :root {
-      --card-w: clamp(280px, 26vw, 460px);
+      --card-w: clamp(360px, 26vw, 460px);
       --card-max-h: calc(100dvh - 160px);
     }
 
@@ -47,9 +47,9 @@
       max-height: none;
       aspect-ratio: auto;
       margin: 0;
-      border: none;
-      border-radius: 0;
-      box-shadow: none;
+      border: 12px solid white;
+      border-radius: 32px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
       z-index: 10;
     }
 
@@ -121,7 +121,7 @@
 
     .fullcard {
       position: relative;
-      width: 100%;
+      /* width hérite de .card (clamp) ; 100% uniquement en fullscreen */
       height: 100%;
       background-size: cover;
       background-repeat: no-repeat;
