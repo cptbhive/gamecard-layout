@@ -8,14 +8,24 @@
   <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7/dist/ionicons/ionicons.js"></script>
   <style>
+    /* Desktop sizing best practice:
+       - width: clamp(min, vw, max) → évite cartes énormes/trop petites
+       - height via aspect-ratio
+       - max-height: calc(100dvh - …) → cap sur petits écrans
+    */
+    :root {
+      --card-w: clamp(280px, 26vw, 460px);
+      --card-max-h: calc(100dvh - 160px);
+    }
+
     .card:hover {
       box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     }
 
     .card {
-      --card-width: 264px;
-      width: var(--card-width);
+      width: min(100%, var(--card-w));
       aspect-ratio: 3 / 4;
+      max-height: var(--card-max-h);
       margin: 16px;
       border: 12px solid white;
       border-radius: 32px;
@@ -34,6 +44,7 @@
       width: 100vw;
       height: 100vh;
       max-width: none;
+      max-height: none;
       aspect-ratio: auto;
       margin: 0;
       border: none;
