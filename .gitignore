@@ -2,3 +2,10 @@
 *.log
 node_modules/
 *.zip
+
+# Terraform
+infra/.terraform/
+infra/*.tfstate
+infra/*.tfstate.*
+infra/.terraform.lock.hcl
+infra/terraform.tfvars

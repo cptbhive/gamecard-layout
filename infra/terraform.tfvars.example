@@ -1,0 +1,7 @@
+bucket_name = "gamecard-layout-your-unique-name"
+aws_region  = "eu-west-1"
+
+tags = {
+  Project = "gamecard-layout"
+  Env     = "prod"
+}
