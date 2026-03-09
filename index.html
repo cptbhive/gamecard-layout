@@ -24,7 +24,7 @@
 
     .card {
       width: min(100%, var(--card-w));
-      aspect-ratio: 3 / 4;
+      aspect-ratio: 9 / 16;
       max-height: var(--card-max-h);
       margin: 16px;
       border: 12px solid white;
@@ -48,7 +48,7 @@
       aspect-ratio: auto;
       margin: 0;
       border: 12px solid white;
-      border-radius: 0;
+      border-radius: 32px;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
       z-index: 10;
     }
@@ -72,12 +72,12 @@
 
     .cornerTopLeft {
       position: absolute;
-      left: -1px;
-      top: -1px;
-      width: 50px;
-      height: 101px;
-      background: url('./assets/card-corner-left.svg') no-repeat top left;
-      background-size: contain;
+      width: 48px;
+      height: 96px;
+      padding-right: 8px;
+      /*border: 1px solid blue;*/
+      background: url('./assets/card-index-left.svg') no-repeat top left;
+      background-size: cover;
       display: flex;
       flex-direction: column;
     }
@@ -97,11 +97,10 @@
     .iconsLeft {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: start;
       align-items: center;
       height: 100%;
-      margin-bottom: 10px;
-      margin-right: 10px;
+      /*border: 1px solid cyan*/
     }
 
     .iconsRight {
@@ -116,7 +115,8 @@
 
     .fullcard ion-icon {
       padding: 8px 4px;
-      font-size: 24px;
+      /*font-size: 24px;*/
+      /*border: 1px solid orange;*/
     }
 
     .fullcard {
@@ -134,6 +134,11 @@
 
     ion-icon[color="c2a"] {
       color: #3880ff;
+    }
+
+    ion-icon {
+      font-size: 24px;
+      /*border: 1px solid red;*/
     }
 
     .caption {
@@ -173,12 +178,12 @@
   <!-- Format: ratio-4-5 | ratio-3-4 | ratio-9-16 | ratio-5-7 | ratio-fullscreen -->
   <div
     style="background-image: url('assets/crystal.jpg')"
-    class="card fullcard ratio-3-4"
+    class="card fullcard ratio-9-16"
   >
     <div class="cornerTopLeft">
       <div class="iconsLeft">
         <ion-icon name="musical-notes-outline"></ion-icon>
-        <ion-icon name="location-outline" color="c2a"></ion-icon>
+        <ion-icon name="location-outline"></ion-icon>
       </div>
     </div>
     <div class="cornerBottomRight">
@@ -204,9 +209,9 @@
       document.body.classList.toggle('fullscreen-mode', ratio === 'ratio-fullscreen');
     }
     function exitFullscreen() {
-      setRatio('ratio-3-4', document.querySelector('.ratio-btn:nth-child(2)'));
+      setRatio('ratio-9-16', document.querySelector('.ratio-btn:nth-child(3)'));
     }
-    document.querySelector('.ratio-btn:nth-child(2)').classList.add('ring-2', 'ring-blue-500');
+    document.querySelector('.ratio-btn:nth-child(3)').classList.add('ring-2', 'ring-blue-500');
   </script>
 </body>
 </html>
